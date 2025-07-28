@@ -13,6 +13,8 @@ export const useTodoStore = defineStore('todo', {
     
   },
   actions: {
-   
+    setAsDone(index) {
+        console.log(index)
+    }
   },
 })
