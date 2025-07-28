@@ -1,9 +1,7 @@
 <template>
     <h1>ini halaman todo list</h1>
 
-    {{ todoStore.name }}<br><br>
-    {{ todoStore.doubleCount }}<br><br>
-    <button @click="todoStore.increment">Add</button>
+    {{ todoStore.todoList }}
 </template>
 
 <script>
