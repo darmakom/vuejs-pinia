@@ -1,8 +1,8 @@
 <template>
     <h1>ini halaman todo list</h1>
 
-    <form @submin.prevent="todoStore.addTodo(newTodo)">
-        <input type="text" v-model="newTodo" placeholder="add new todo...">
+    <form @submit.prevent="todoStore.addTodo(newTodo)">
+        <input type="text" v-model="newTodo" id="newTodo" placeholder="add new todo...">
         <input type="submit" value="Add">
     </form>
 

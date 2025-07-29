@@ -20,9 +20,10 @@ export const useTodoStore = defineStore('todo', {
         this.todoList[index].isDone = false
     },
     addTodo(data) {
-      this.todoList.push (
-        { name:data, isDone: false }
+      this.todoList.push(
+        { name: data, isDone: false}
       )
+      
     },
   },
 })
