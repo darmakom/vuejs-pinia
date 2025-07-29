@@ -1,12 +1,18 @@
 <template>
     <h1>ini halaman todo list</h1>
 
+    <form @submin.prevent="todoStore.addTodo(newTodo)">
+        <input type="text" v-model="newTodo" placeholder="add new todo...">
+        <input type="submit" value="Add">
+    </form>
+
     <ul>
         <li v-for="(list, index) in todoStore.todoList">
             <span>
-                {{ list.nama }}</span>
+                {{ list.name }}</span>
             <span>
-                <button @click="todoStore.setAsDone(index)">Set as Done</button>
+                <button v-if="!list.isDone" @click="todoStore.setAsDone(index)">Set as Done</button>
+                <button v-if="list.isDone" @click="todoStore.setAsUndone(index)">Set as Undone</button>
             </span>
         </li>
     </ul>
@@ -35,6 +41,11 @@
             const todoStore = useTodoStore()
 
             return { todoStore }
+        },
+        data() {
+            return {
+                newTodo: ''
+            }
         }
     }
 </script>

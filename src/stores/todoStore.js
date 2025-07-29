@@ -3,10 +3,10 @@ import { defineStore } from 'pinia'
 export const useTodoStore = defineStore('todo', {
   state: () => ({ 
     todoList : [
-        {nama: 'Belajar HTML', isDone: false},
-        {nama: 'Belajar CSS', isDone: false},
-        {nama: 'Belajar JS', isDone: false},
-        {nama: 'Belajar PHP', isDone: false},
+        {name: 'Belajar HTML', isDone: false},
+        {name: 'Belajar CSS', isDone: false},
+        {name: 'Belajar JS', isDone: false},
+        {name: 'Belajar PHP', isDone: false},
     ]
    }),
   getters: {
@@ -14,7 +14,15 @@ export const useTodoStore = defineStore('todo', {
   },
   actions: {
     setAsDone(index) {
-        console.log(index)
-    }
+        this.todoList[index].isDone = true
+    },
+    setAsUndone(index) {
+        this.todoList[index].isDone = false
+    },
+    addTodo(data) {
+      this.todoList.push (
+        { name:data, isDone: false }
+      )
+    },
   },
 })
