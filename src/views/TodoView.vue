@@ -1,5 +1,5 @@
 <template>
-    <h1>ini halaman todo list</h1>
+    <h1 style="margin-left: 50px;">My Todo List</h1>
 
     <form @submit.prevent="todoStore.addTodo(newTodo)">
         <input type="text" v-model="newTodo" id="newTodo" placeholder="add new todo...">
