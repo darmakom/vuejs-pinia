@@ -10,14 +10,22 @@ export const useTodoStore = defineStore('todo', {
     ]
    }),
   getters: {
-    
+    showall(state) {
+        return state.todoList
+    },
+    doneonly(state) {
+      return state.todoList.filter(item => item.isDone == true)
+    },
+    undoneonly(state) {
+      return state.todoList.filter(item => item.isDone == false)
+    }
   },
   actions: {
-    setAsDone(index) {
-        this.todoList[index].isDone = true
+    setAsDone(name) {
+        this.todoList.find(item => item.name == name).isDone = true
     },
-    setAsUndone(index) {
-        this.todoList[index].isDone = false
+    setAsUndone(name) {
+        this.todoList.find(item => item.name == name).isDone = false
     },
     addTodo(data) {
       let exists = this.todoList.filter(item => item.name == data).length
