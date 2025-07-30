@@ -20,6 +20,11 @@ export const useTodoStore = defineStore('todo', {
         this.todoList[index].isDone = false
     },
     addTodo(data) {
+      let exists = this.todoList.filter(item => item.name == data).length
+      if(exists) {
+        alert('new todo is existed in data')
+        return
+      }
       this.todoList.push(
         { name: data, isDone: false}
       )

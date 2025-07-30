@@ -19,6 +19,20 @@
 </template>
 
 <style scoped>
+    form {
+        width: 500px;
+        margin-left: 50px;
+    }
+
+    form input {
+        padding: 10px;
+    }
+
+    form input:first-child {
+        width: 80%;
+        margin-right: 9px;
+    }
+
     ul {
         list-style: none;
         width: 500px;
